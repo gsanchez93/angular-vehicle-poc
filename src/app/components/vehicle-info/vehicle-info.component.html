@@ -1,0 +1,34 @@
+<div *ngIf="vehicle" class="container vehicle-details">
+  <h2>{{vehicle.year}} {{vehicle.make}} {{vehicle.model}} {{vehicle.trim}}</h2>
+  <!--<div>
+    <img src={{vehicle.imageFile}}/>
+  </div>-->
+  <div>
+    <label>VIN: </label><p>{{vehicle.vin}}</p>
+  </div>
+  <div>
+    <label>CR Rating: </label><p>{{vehicle.crRating}}</p>
+  </div>
+  <div>
+    <label>Mileage: </label><p>{{vehicle.mileage | number: fractionSize}} miles</p>
+  </div>
+  <div>
+    <label>Color: </label><p>{{vehicle.color}}</p>
+  </div>
+  <div>
+    <label>Location: </label><p>{{vehicle.location}}</p>
+  </div>
+  <div>
+    <label>ZipCode: </label><p>{{vehicle.zipcode}}</p>
+  </div>
+  <div>
+    <label>Asking Price: </label><p>${{vehicle.askingPrice | number: fractionSize}}</p>
+  </div>
+  <div>
+    <label>Kbb: </label><p>${{vehicle.kbb | number: fractionSize}}</p>
+  </div>
+  <div>
+    <label>{{vehicle.inspected ? 'Professionally Inspected: As Described Guarantee Available!' : 'Vehicle Not Inspected!'}}</label>
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>

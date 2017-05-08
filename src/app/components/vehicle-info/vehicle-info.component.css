@@ -1,0 +1,10 @@
+
+.vehicle-details {
+    padding-top: 20px;
+}
+
+.vehicle-details label {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}

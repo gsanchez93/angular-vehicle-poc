@@ -1,0 +1,89 @@
+<!--<div class="container">
+  <h2>{{title}}</h2>
+</div>-->
+
+<div class="container auction-pager">
+  <div class="row">
+    <ul *ngIf="pager && pager.pages && pager.pages.length" class="pagination">
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(1)">First</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+      </li>
+      <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+        <a (click)="setPage(page)">{{page}}</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.currentPage + 1)">Next</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.totalPages)">Last</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container vehicles-container">
+  <div *ngFor="let vehicle of pagedVehicles" id={{vehicle.vehicleMovementId}} class="row vehicle-row">
+    <div class="col-xs-12 col-md-12">
+      <div class="row">
+        <div class="vehicle-image col-md-2 col-xs-2">
+          <img class="vehicle-image" src={{vehicle.imageFile}}/>
+        </div>
+        <div class="col-md-6 col-xs-6">
+          <div class="row">
+            <label class="col-md-8 col-xs-8 vehicle-label"><a [routerLink]="['/info', vehicle.vehicleMovementId]">{{vehicle.year}} {{vehicle.make}} {{vehicle.model}} {{vehicle.trim}}</a></label>
+            <label class="col-md-4 col-xs-4 vehicle-mileage">{{vehicle.mileage | number: fractionSize}} mi</label>
+          </div>
+          <div class="row">
+            <label class="col-md-12 col-xs-12 vehicle-kbb">Kbb: ${{vehicle.kbb | number: fractionSize}}</label>
+          </div>
+        </div>
+        <div class="col-md-1 col-xs-1">
+          <label class="vehicle-color">{{vehicle.color}}</label>
+        </div>
+        <div class="vehicle-bidder-image col-md-1 col-xs-1">
+          <img class="vehicle-bidder-image" src={{vehicle.bidderImageUrl}}/>
+        </div>
+
+        <div class="col-md-2 col-xs-2">
+          <label *ngIf="vehicle.bidder; else elseBidderBlock" class="vehicle-bidder">Bidder: {{vehicle.bidder}}</label>
+          <ng-template #elseBidderBlock>
+            <label class="vehicle-bidder">Bidder: N/A</label>
+          </ng-template>
+
+          <label *ngIf="vehicle.bidAmount && vehicle.bidAmount > 0; else elseBidBlock" class="vehicle-bidder-amount">Bid Amount: ${{vehicle.bidAmount | number: fractionSize}}</label>
+          <ng-template #elseBidBlock>
+            <label class="vehicle-bidder-amount">Bid Amount: $0</label>
+          </ng-template>
+
+          <br />
+          <input #bidAmountBox id="bid-amount-box" />
+          <button (click)="bid(vehicle.vehicleMovementId, vehicle.bidAmount, bidAmountBox.value)">Bid</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container auction-pager">
+  <div class="row">
+    <ul *ngIf="pager && pager.pages && pager.pages.length" class="pagination">
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(1)">First</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+      </li>
+      <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+        <a (click)="setPage(page)">{{page}}</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.currentPage + 1)">Next</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.totalPages)">Last</a>
+      </li>
+    </ul>
+  </div>
+</div>
