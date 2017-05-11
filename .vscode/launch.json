@@ -6,12 +6,8 @@
       "request": "launch",
       "name": "Launch Chrome",
       "url": "http://localhost:4200",
-      "webRoot": "${workspaceRoot}/src/app",
+      "webRoot": "${workspaceRoot}",
       "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "webpack:///./~/*": "${workspaceRoot}/node_modules/*",
-        "webpack:///./src/*": "${workspaceRoot}/src/*"
-      },
       "userDataDir": "${workspaceRoot}/.vscode/chrome",
       "runtimeArgs": [
         "--disable-session-crashed-bubble"
@@ -23,12 +19,8 @@
       "request": "attach",
       "url": "http://localhost:4200",
       "port": 9222,
-      "webRoot": "${workspaceRoot}/src/app",
-      "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "webpack:///./~/*": "${workspaceRoot}/node_modules/*",
-        "webpack:///./src/*": "${workspaceRoot}/src/*"
-      }
+      "webRoot": "${workspaceRoot}",
+      "sourceMaps": true
     }
   ]
 }
