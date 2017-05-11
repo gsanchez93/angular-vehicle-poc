@@ -1,6 +1,11 @@
 {
-  "name": "angular-vehicle-cli",
-  "version": "0.0.0",
+  "name": "angular-vehicle-poc",
+  "version": "0.7.1",
+  "description": "POC app for Saperium. A Vehicle Bidding System that uses Angular 4 with nginx Pushstream and TDD integration",
+  "repository": {
+    "type": "git",
+    "url": "gsanchez93/angular-vehicle-poc"
+  },
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
