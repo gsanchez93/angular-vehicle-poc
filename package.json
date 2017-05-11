@@ -6,6 +6,11 @@
     "type": "git",
     "url": "gsanchez93/angular-vehicle-poc"
   },
+  "author": { 
+    "name" : "Gabby Sanchez",
+    "email" : "gabby@saperium.com",
+    "url" : "http://github.com/gsanchez93"
+  },
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
