@@ -46,7 +46,7 @@ export class VehicleService {
           .catch(this.handleError);
   }
 
-  getVehiclesFromJson(): Promise<Vehicle[]> {
+  getVehiclesFromLocalArray(): Promise<Vehicle[]> {
       return Promise.resolve(this.vehicleData.getVehicleData());
   }
 

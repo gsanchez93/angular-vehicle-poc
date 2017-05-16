@@ -33,7 +33,7 @@ export class AuctionComponent implements OnInit {
 
   getVehicles(): Promise<Vehicle> {
     return this.vehicleService
-      .getVehiclesFromJson()
+      .getVehiclesFromLocalArray()
       .then(vehicles => {
         this.vehicles = vehicles;
         this.setPage(1);
